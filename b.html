@@ -1,0 +1,14 @@
+<script>
+window.bridgeCalledByNative = {
+  sendSuccess: (id, value) => {
+    document.body.innerText += `SUCCESS ${id}: ${value}\n`;
+  },
+  sendFailure: (id, value) => {
+    document.body.innerText += `FAIL ${id}: ${value}\n`;
+  }
+};
+
+window.onload = () => {
+  window.bridgeCalledByWeb.request("getLocalData", "{}");
+};
+</script>
